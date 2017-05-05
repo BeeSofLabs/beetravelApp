@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.ogaclejapan.smarttablayout.SmartTabLayout
+            android:id="@+id/tabs"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:stl_customTabTextLayoutId="@layout/custom_tab"
+            app:stl_customTabTextViewId="@id/custom_text"
+            app:stl_indicatorColor="@color/colorPrimary"
+            app:stl_indicatorInterpolation="linear"
+            app:stl_indicatorThickness="3dp"
+            app:stl_underlineThickness="1dp" />
+
+        <Button
+            android:id="@+id/add_day"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text=" + " />
+
+    </LinearLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/colors"
+        android:layout_below="@+id/tabs" />
+
+</LinearLayout>

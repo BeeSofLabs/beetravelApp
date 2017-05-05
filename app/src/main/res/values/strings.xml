@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">P1</string>
+    <string name="title_home">Awal</string>
+    <string name="title_order">Pesanan</string>
+    <string name="title_persona">Akun</string>
+    <string name="title_dashboard">Packages</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="package_title">Packages</string>
+    <string name="package_detail_title">Detail Package</string>
+    <string name="main_title">Main</string>
+    <string name="image_package">Image Of Package</string>
+    <string name="buy">Beli</string>
+    <string name="title_payment">Payment</string>
+
+    <!-- Fontawesome -->
+    <string name="label_buy">&#xf0e7;&#160;&#160;&#160; Beli</string>
+    <string name="label_next">Lanjut</string>
+    <string name="step_customer_payment">Pemesan</string>
+    <string name="step_transaction_payment">Pembayaran</string>
+    <string name="step_confirmation_payment">Konfirmasi</string>
+    <string name="label_done">Done</string>
+    <string name="change_hotel">Ganti Hotel</string>
+    <string name="change_itinerary">Ganti Rencana</string>
+    <string name="description_header_itinerary_day">Rencana Perjalanan \n Hari ke 1</string>
+    <string name="description_title_itinerary_day">Hari ke 1</string>
+    <string name="label_pick">Pilih</string>
+</resources>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "954749939143",
+    "firebase_url": "https://tv-prototype-43be4.firebaseio.com",
+    "project_id": "tv-prototype-43be4",
+    "storage_bucket": "tv-prototype-43be4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954749939143:android:63753edf5a9bffb8",
+        "android_client_info": {
+          "package_name": "com.tv.tvprototype"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954749939143-8j5oilbbjjqi7m7a60pdf854vqnq7jse.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tv.tvprototype",
+            "certificate_hash": "11cb939a53076f33a2dda92af604e03f712467f5"
+          }
+        },
+        {
+          "client_id": "954749939143-86sqk1ghq0t732ebkk335lduqnjhhoqc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1OjfHq43-JCwQZL7DyGvYvit7729hvnY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954749939143-86sqk1ghq0t732ebkk335lduqnjhhoqc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
