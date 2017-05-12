@@ -35,6 +35,8 @@ public class BuyDetailPriceDialogAdapter extends ArrayAdapter<String> {
     TextView  labelPriceDescription;
     @BindView(R.id.label_price_amount)
     TextView  labelPriceAmount;
+    @BindView(R.id.label_total_cost_value)
+    TextView labelTotalCostValue;
 
     private ArrayList data;
 
@@ -52,7 +54,11 @@ public class BuyDetailPriceDialogAdapter extends ArrayAdapter<String> {
         FontManager.useFontAwesome(confirmBuyButton);
 
         labelPriceDescription.setText((String) this.data.get(position));
-        if (position == (this.data.size() - 1)) layoutBuyButton.setVisibility(View.VISIBLE); // will visible the button in last position.
+
+        if (position == (this.data.size() - 1)) {
+            layoutBuyButton.setVisibility(View.VISIBLE); // will visible the button in last position.
+            labelTotalCostValue.setText("Rp 500.000,00");
+        }
 
         confirmBuyButton.setOnClickListener(new View.OnClickListener() {
             @Override

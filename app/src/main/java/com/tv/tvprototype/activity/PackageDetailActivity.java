@@ -5,13 +5,9 @@ import android.support.annotation.Nullable;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.orhanobut.dialogplus.DialogPlus;
-import com.orhanobut.dialogplus.ListHolder;
 import com.orhanobut.dialogplus.OnItemClickListener;
-import com.orhanobut.dialogplus.ViewHolder;
 import com.tv.tvprototype.BaseAppCompatActivity;
 import com.tv.tvprototype.R;
 
@@ -20,9 +16,7 @@ import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import core.adapter.BuyDetailDialogAdapter;
 import core.adapter.BuyDetailPriceDialogAdapter;
-import core.component.FontManager;
 import core.fragment.PackageFragment;
 
 /**
