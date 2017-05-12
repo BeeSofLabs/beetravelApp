@@ -21,8 +21,6 @@ import butterknife.ButterKnife;
 public class ItinerarySlideFragment extends Fragment {
     @BindView(R.id.text_description_package)
     TextView descriptionPackage;
-    @BindView(R.id.text_title_package)
-    TextView titlePackage;
 
     private int pos;
 
@@ -36,8 +34,7 @@ public class ItinerarySlideFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_itinerary_slide_page, container, false);
         ButterKnife.bind(this, rootView);
 
-        titlePackage.setText("Card #"+(pos+1));
-        descriptionPackage.setText("Card Itinerary #"+(pos+1));
+        descriptionPackage.setText("Card Itinerary #" + (pos + 1));
         return rootView;
     }
 }

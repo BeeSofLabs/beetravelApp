@@ -13,23 +13,5 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@color/cardview_light_background" />
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal|bottom"
-        android:padding="5dp"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/pick_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/label_pick"
-            android:gravity="center"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:background="@color/orange"  />
-    </RelativeLayout>
+    
 </LinearLayout>

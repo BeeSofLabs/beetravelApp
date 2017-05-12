@@ -2,6 +2,7 @@ package core.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
@@ -23,6 +24,9 @@ public class ItineraryFragment extends Fragment {
     @BindView(R.id.pager)
     ViewPager pager;
 
+    @BindView(R.id.pagerDots)
+    TabLayout pagerDots;
+
     private FragmentManager fragmentManager;
 
     public ItineraryFragment(FragmentManager fragmentManager) {
@@ -37,9 +41,10 @@ public class ItineraryFragment extends Fragment {
 
 //        // Initialize the ViewPager and set an adapter
         pager.setAdapter(new ItemItineraryCardAdapter(this.fragmentManager));
-        pager.setClipToPadding(false);
-        pager.setPadding(40, 0, 40, 0);
-        pager.setPageMargin(5);
+        pagerDots.setupWithViewPager(pager, true);
+//        pager.setClipToPadding(false);
+//        pager.setPadding(40, 0, 40, 0);
+//        pager.setPageMargin(5);
 
         return rootView;
     }
