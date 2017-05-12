@@ -52,7 +52,7 @@ dependencies {
 //    compile 'com.google.android.gms:play-services:10.+'
 
     // exploration
-//    compile 'com.orhanobut:dialogplus:1.11@aar' // dialog plus
+    compile 'com.orhanobut:dialogplus:1.11@aar' // dialog plus
 
     // 3rd party library
     compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar' // swipe tab

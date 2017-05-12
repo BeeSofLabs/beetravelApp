@@ -34,7 +34,6 @@ public class TabPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        Log.d("position=", ""+position);
         return new PackageDayFragment(position+1);
     }
 

@@ -25,10 +25,10 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/buy_button"
+            android:id="@+id/button_show_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/label_buy"
+            android:text="@string/label_show_detail"
             android:gravity="center"
             android:textColor="@android:color/white"
             android:textStyle="bold"
