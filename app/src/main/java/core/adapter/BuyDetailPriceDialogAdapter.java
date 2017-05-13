@@ -1,9 +1,10 @@
 package core.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +15,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tv.tvprototype.R;
+import com.tv.tvprototype.activity.PackageDetailActivity;
+import com.tv.tvprototype.activity.PaymentActivity;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import core.component.FontManager;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 /**
  * Created by ary on 5/11/17.
@@ -28,8 +33,8 @@ import core.component.FontManager;
 public class BuyDetailPriceDialogAdapter extends ArrayAdapter<String> {
     @BindView(R.id.layout_buy_button)
     RelativeLayout layoutBuyButton;
-    @BindView(R.id.confirm_buy_button)
-    Button confirmBuyButton;
+    @BindView(R.id.button_buy)
+    Button buttonBuy;
 
     @BindView(R.id.label_price_description)
     TextView  labelPriceDescription;
@@ -39,9 +44,11 @@ public class BuyDetailPriceDialogAdapter extends ArrayAdapter<String> {
     TextView labelTotalCostValue;
 
     private ArrayList data;
+    private Activity activity;
 
-    public BuyDetailPriceDialogAdapter(@NonNull Context context, ArrayList data) {
+    public BuyDetailPriceDialogAdapter(Activity activity, @NonNull Context context, ArrayList data) {
         super(context, 0, data);
+        this.activity = activity;
         this.data = data;
     }
 
@@ -51,7 +58,7 @@ public class BuyDetailPriceDialogAdapter extends ArrayAdapter<String> {
         convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_price_list, parent, false);
         ButterKnife.bind(this, convertView);
 
-        FontManager.useFontAwesome(confirmBuyButton);
+        FontManager.useFontAwesome(buttonBuy);
 
         labelPriceDescription.setText((String) this.data.get(position));
 
@@ -60,10 +67,13 @@ public class BuyDetailPriceDialogAdapter extends ArrayAdapter<String> {
             labelTotalCostValue.setText("Rp 500.000,00");
         }
 
-        confirmBuyButton.setOnClickListener(new View.OnClickListener() {
+        buttonBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Texting buy click", Toast.LENGTH_LONG).show();
+//                Toast.makeText(getContext(), "Click buy package!", Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(getContext(), PaymentActivity.class);
+                activity.startActivity(intent);
             }
         });
         return convertView;

@@ -1,10 +1,12 @@
 package com.tv.tvprototype.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.OnItemClickListener;
@@ -17,6 +19,7 @@ import java.util.Arrays;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import core.adapter.BuyDetailPriceDialogAdapter;
+import core.event.MessageEvent;
 import core.fragment.PackageFragment;
 
 /**
@@ -24,8 +27,10 @@ import core.fragment.PackageFragment;
  */
 
 public class PackageDetailActivity extends BaseAppCompatActivity {
-    @BindView(R.id.button_show_detail)
-    Button buttonShowDetail;
+    @BindView(R.id.show_detail)
+    TextView showDetail;
+    @BindView(R.id.button_buy)
+    Button buttonBuy;
 
     private ArrayList<String> titles = new ArrayList<String>(Arrays.asList("Day 1", "Day 2", "Day 3"));
 
@@ -39,24 +44,16 @@ public class PackageDetailActivity extends BaseAppCompatActivity {
 
         showFragment(new PackageFragment(titles, getSupportFragmentManager()));
 
-
-        buttonShowDetail.setOnClickListener(new View.OnClickListener() {
+        showDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                getEventBus().post(new MessageEvent("Hello everyone!"));
-//                Intent intent = new Intent(getApplicationContext(), PaymentActivity.class);
-//                startActivity(intent);
-
-
                 final String[] values = new String[]{ "Tour to Singapore", "Tour Raja Ampat", "Waisak Day 3D2N" };
                 final ArrayList data = new ArrayList();
-                for (int i = 0; i < values.length; ++i) {
-                    data.add(values[i]);
-                }
+                for (int i = 0; i < values.length; ++i) data.add(values[i]);
 
                 DialogPlus dialog = DialogPlus.newDialog(PackageDetailActivity.this)
 
-                        .setAdapter(new BuyDetailPriceDialogAdapter(getApplication(), data))
+                        .setAdapter(new BuyDetailPriceDialogAdapter(PackageDetailActivity.this, getApplication(), data))
                         .setOnItemClickListener(new OnItemClickListener() {
                             @Override
                             public void onItemClick(DialogPlus dialog, Object item, View view, int position) {
@@ -67,6 +64,14 @@ public class PackageDetailActivity extends BaseAppCompatActivity {
                         .create();
 
                 dialog.show();
+            }
+        });
+        buttonBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getEventBus().post(new MessageEvent("Hello everyone!"));
+                Intent intent = new Intent(getApplicationContext(), PaymentActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -6,9 +6,11 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.tv.tvprototype.R;
 
@@ -21,6 +23,8 @@ import core.adapter.ItemItineraryCardAdapter;
  */
 
 public class ItineraryFragment extends Fragment {
+    @BindView(R.id.image_package)
+    ImageView imagePackage;
     @BindView(R.id.pager)
     ViewPager pager;
 
@@ -42,9 +46,30 @@ public class ItineraryFragment extends Fragment {
 //        // Initialize the ViewPager and set an adapter
         pager.setAdapter(new ItemItineraryCardAdapter(this.fragmentManager));
         pagerDots.setupWithViewPager(pager, true);
-//        pager.setClipToPadding(false);
-//        pager.setPadding(40, 0, 40, 0);
-//        pager.setPageMargin(5);
+        pager.setClipToPadding(false);
+        pager.setPadding(40, 0, 40, 0);
+        pager.setPageMargin(5);
+
+        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                Log.d(">>>POS=", position+"");
+                if((position % 2) == 0 )
+                    imagePackage.setImageResource(R.drawable.sanur_bali_resort);
+                else
+                    imagePackage.setImageResource(R.drawable.beach_resort);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         return rootView;
     }

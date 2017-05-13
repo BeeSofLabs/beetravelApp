@@ -24,15 +24,25 @@
         android:padding="5dp"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button_show_detail"
+        <TextView
+            android:id="@+id/show_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_show_detail"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="5dp"/>
+
+        <Button
+            android:id="@+id/button_buy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_buy"
             android:gravity="center"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            android:background="@color/orange"  />
+            android:background="@color/orange"
+            android:layout_below="@+id/show_detail" />
     </RelativeLayout>
 
 </LinearLayout>
