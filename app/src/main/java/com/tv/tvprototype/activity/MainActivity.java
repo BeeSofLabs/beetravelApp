@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 import butterknife.BindView;
@@ -19,7 +20,8 @@ import core.event.MessageEvent;
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends BaseAppCompatActivity {
-
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
     @BindView(R.id.message)
     TextView mTextMessage;
     @BindView(R.id.navigation)
@@ -32,6 +34,7 @@ public class MainActivity extends BaseAppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.main_title);
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);

@@ -24,4 +24,9 @@
     <string name="description_header_itinerary_day">Rencana Perjalanan \n Hari ke 1</string>
     <string name="description_title_itinerary_day">Hari ke 1</string>
     <string name="label_pick">Pilih</string>
+
+    <!-- App -->
+    <string name="label_show_detail">Show Detail</string>
+    <string name="total_cost">Total Payment</string>
+    <string name="itinerary_timeline_title">Timeline</string>
 </resources>

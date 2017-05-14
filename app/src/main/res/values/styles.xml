@@ -10,6 +10,9 @@
 
     <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorControlNormal">@color/white</item>
+        <item name="colorPrimaryDark">@color/app_toolbar_dark_green</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="LinearProgress" parent="Theme.AppCompat.Light">
