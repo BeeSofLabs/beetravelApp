@@ -6,7 +6,7 @@
         android:id="@+id/toolbar_itinerary"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/white"
+        android:background="@drawable/background_toolbar_translucent"
         android:gravity="center_horizontal"
         android:padding="0dp">
 
@@ -20,7 +20,8 @@
             android:layout_margin="10dp"
             android:paddingRight="50dp"
             android:gravity="center"
-            android:text="@string/description_header_itinerary_day" />
+            android:text="@string/description_header_itinerary_day"
+            android:textColor="@android:color/white"/>
 
 
 

@@ -9,6 +9,7 @@
     </style>
 
     <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/white</item>
     </style>
 
     <style name="LinearProgress" parent="Theme.AppCompat.Light">

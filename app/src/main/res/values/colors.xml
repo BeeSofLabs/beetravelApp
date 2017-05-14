@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <!-- com.tv.tvprototype.App.App color -->
+    <color name="black_alpha_40">#66000000</color>
     <color name="grey_card_background_color">#e5ebec</color>
     <color name="text_enabled">#000</color>
     <color name="text_disabled">#ababab</color>
