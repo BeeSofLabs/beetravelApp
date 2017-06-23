@@ -34,7 +34,7 @@
                     android:layout_height="250dp"
                     android:layout_marginBottom="50dp"
                     android:scaleType="fitXY"
-                    android:src="@mipmap/mountain_view" />
+                    android:src="@drawable/mountain_view" />
 
                 <LinearLayout
                     android:id="@+id/package_info"

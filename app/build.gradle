@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 apply plugin: 'realm-android'
+apply plugin: 'com.google.gms.google-services'
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
@@ -49,22 +50,31 @@ dependencies {
     compile 'com.android.support:support-vector-drawable:25.3.1'
     compile 'com.android.support:cardview-v7:25.3.1'
     compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.google.firebase:firebase-messaging:9.0.2'
+//    compile 'com.google.firebase:firebase-core:10.2.4' // push notification
 //    compile 'com.google.android.gms:play-services:10.+'
 
     // exploration
     compile 'com.orhanobut:dialogplus:1.11@aar' // dialog plus
+    compile 'com.evernote:android-job:1.1.10' // job task
 
     // 3rd party library
+    compile("org.igniterealtime.smack:smack-java7:4.2.0") {
+        configurations {
+            all*.exclude group: 'xpp3', module: 'xpp3'
+        }
+    }
     compile 'com.ogaclejapan.smarttablayout:library:1.6.1@aar' // swipe tab
     compile 'com.eclipsesource.minimal-json:minimal-json:0.9.4' // json parser
     compile 'com.wdullaer:materialdatetimepicker:2.1.1' // material datetime picker
+    compile 'me.relex:circleindicator:1.2.2@aar' // circle indicator for viewpager
 //    compile 'com.github.rey5137:material:1.2.2' // material style
     compile 'com.facebook.android:facebook-android-sdk:4.7.0'
     compile 'com.squareup.okhttp3:okhttp:3.2.0' // http library request
     compile 'com.cocosw:bottomsheet:1.+@aar' // buttom panel style
     compile 'joda-time:joda-time:2.9.4' // joda time
     compile 'org.greenrobot:eventbus:3.0.0' // eventbus for communicatin between component
-    compile 'com.github.bumptech.glide:glide:3.7.0' // for image loading
+//    compile 'com.github.bumptech.glide:glide:3.7.0' // for image loading
     compile 'com.jakewharton:butterknife:8.0.1' // DI for view component
     apt 'com.jakewharton:butterknife-compiler:8.0.1' // DI for view component
 

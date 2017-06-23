@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/search_layout"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    android:background="@android:color/white"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:weightSum="0.6">
+
+    <TextView
+        android:id="@+id/search_keyword"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="1 Orang, 21 Jun - 23 Jun 2017"
+        android:textColor="#ababab" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_magnifier" />
+</LinearLayout>

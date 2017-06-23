@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/image_package"
             android:scaleType="fitXY"
-            android:src="@mipmap/mountain_view" />
+            android:src="@drawable/mountain_view" />
 
 
         <TextView

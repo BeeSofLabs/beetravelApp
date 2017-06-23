@@ -4,26 +4,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.TextView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import com.crashlytics.android.Crashlytics;
+
 import com.tv.tvprototype.BaseAppCompatActivity;
 import com.tv.tvprototype.R;
 
-import org.greenrobot.eventbus.EventBus;
-
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import core.event.MessageEvent;
-import io.fabric.sdk.android.Fabric;
+import core.fragment.AccountFragment;
+import core.fragment.HomeFragment;
+import core.fragment.OrderFragment;
 
 public class MainActivity extends BaseAppCompatActivity {
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
-    @BindView(R.id.message)
-    TextView mTextMessage;
+//    @BindView(R.id.toolbar)
+//    Toolbar toolbar;
     @BindView(R.id.navigation)
     BottomNavigationView navigation;
 //    @BindView(R.id.progressBar) ProgressBar progressBar;
@@ -34,8 +30,10 @@ public class MainActivity extends BaseAppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.main_title);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setTitle(R.string.main_title);
+
+        showFragment(new HomeFragment(getSupportFragmentManager()));
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 //        runThread();
@@ -51,19 +49,21 @@ public class MainActivity extends BaseAppCompatActivity {
                 case R.id.navigation_home:
 //                    runThread();
 //                    progressBar.setProgress(20);
-                    mTextMessage.setText(R.string.title_home);
+                    showFragment(new HomeFragment(MainActivity.this.getSupportFragmentManager()));
+
                     return true;
-                case R.id.navigation_packages:
+                case R.id.navigation_orders:
 //                    runThread();
 //                    progressBar.setProgress(80);
 //                    mTextMessage.setText(R.string.title_dashboard);
-                    intent = new Intent(getApplicationContext(), PackageActivity.class);
-                    startActivity(intent);
+//                    intent = new Intent(getApplicationContext(), PackageActivity.class);
+//                    startActivity(intent);
+                    showFragment(new OrderFragment());
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_account:
 //                    runThread();
 //                    progressBar.setProgress(100);
-                    mTextMessage.setText(R.string.title_notifications);
+                    showFragment(new AccountFragment());
                     getEventBus().post(new MessageEvent("Welcome from main activity said!!"));
                     return true;
             }

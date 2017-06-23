@@ -20,27 +20,25 @@ import butterknife.ButterKnife;
  * Created by ary on 5/5/17.
  */
 
-public class ItinerarySlideFragment extends Fragment {
-    @BindView(R.id.card_package)
-    CardView itineraryCard;
-    @BindView(R.id.text_description_package)
-    TextView descriptionPackage;
+public class BannerSlideFragment extends Fragment {
+    @BindView(R.id.card_banner)
+    CardView bannerCard;
+//    @BindView(R.id.text_description_package)
+//    TextView descriptionPackage;
 
     private int pos;
 
-    public ItinerarySlideFragment(int pos) {
+    public BannerSlideFragment(int pos) {
         this.pos = pos;
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_itinerary_slide_page, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_banner_slide_page, container, false);
         ButterKnife.bind(this, rootView);
 
-        descriptionPackage.setText("Card Itinerary #" + (pos + 1));
-
-        itineraryCard.setOnClickListener(new View.OnClickListener() {
+        bannerCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), ItineraryTimelineActivity.class);

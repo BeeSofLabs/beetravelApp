@@ -62,7 +62,8 @@ public class PackageFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         Log.d("TAG", "click add day button!");
         titles.add("Day " + (this.titles.size() + 1));
-        ((PackageDetailActivity) getActivity()).showFragmentFromChild(new PackageFragment(titles, fragmentManager));
+        ((PackageDetailActivity) getActivity()).showFragment(new PackageFragment(titles, fragmentManager));
+
 //        Intent intent = new Intent(getActivity(), PackageDetailActivity.class);
 //        getActivity().startActivity(intent);
 //        getActivity().finish();=

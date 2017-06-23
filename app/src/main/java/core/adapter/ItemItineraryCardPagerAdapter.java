@@ -10,10 +10,10 @@ import core.fragment.ItinerarySlideFragment;
  * Created by ary on 5/4/17.
  */
 
-public class ItemItineraryCardAdapter extends FragmentStatePagerAdapter {
+public class ItemItineraryCardPagerAdapter extends FragmentStatePagerAdapter {
     private FragmentManager fm;
 
-    public ItemItineraryCardAdapter(FragmentManager fm) {
+    public ItemItineraryCardPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 

@@ -16,7 +16,8 @@ import com.tv.tvprototype.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import core.adapter.ItemItineraryCardAdapter;
+import core.adapter.ItemItineraryCardPagerAdapter;
+import me.relex.circleindicator.CircleIndicator;
 
 /**
  * Created by ary on 5/4/17.
@@ -28,8 +29,8 @@ public class ItineraryFragment extends Fragment {
     @BindView(R.id.pager)
     ViewPager pager;
 
-    @BindView(R.id.pagerDots)
-    TabLayout pagerDots;
+    @BindView(R.id.pagerIndicator)
+    CircleIndicator pagerIndicator;
 
     private FragmentManager fragmentManager;
 
@@ -43,12 +44,17 @@ public class ItineraryFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_itinerary, container, false);
         ButterKnife.bind(this, rootView);
 
-//        // Initialize the ViewPager and set an adapter
-        pager.setAdapter(new ItemItineraryCardAdapter(this.fragmentManager));
-        pagerDots.setupWithViewPager(pager, true);
+        // Initialize the ViewPager and set an adapter
+        pager.setAdapter(new ItemItineraryCardPagerAdapter(this.fragmentManager));
+        pagerIndicator.setViewPager(pager);
         pager.setClipToPadding(false);
         pager.setPadding(40, 0, 40, 0);
         pager.setPageMargin(5);
+        final float density = getResources().getDisplayMetrics().density;
+//        pagerIndicator.setFillColor(0xFFFFFFFF);
+//        circleIndicator.setStrokeColor(0xFFFFFFFF);
+//        circleIndicator.setStrokeWidth(1);
+//        circleIndicator.setRadius(6 * density);
 
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

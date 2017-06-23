@@ -35,12 +35,6 @@ public class BaseAppCompatActivity extends AppCompatActivity {
         }
     }
 
-
-
-    public void showFragmentFromChild(Fragment fragment) {
-        showFragment(fragment);
-    }
-
     protected EventBus getEventBus(){
         return EventBus.getDefault();
     }

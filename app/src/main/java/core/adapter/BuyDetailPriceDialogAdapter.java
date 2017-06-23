@@ -10,10 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.orhanobut.dialogplus.DialogPlus;
 import com.tv.tvprototype.R;
 import com.tv.tvprototype.activity.PackageDetailActivity;
 import com.tv.tvprototype.activity.PaymentActivity;
@@ -31,17 +33,10 @@ import static com.facebook.FacebookSdk.getApplicationContext;
  */
 
 public class BuyDetailPriceDialogAdapter extends ArrayAdapter<String> {
-    @BindView(R.id.layout_buy_button)
-    RelativeLayout layoutBuyButton;
-    @BindView(R.id.button_buy)
-    Button buttonBuy;
-
     @BindView(R.id.label_price_description)
-    TextView  labelPriceDescription;
+    TextView labelPriceDescription;
     @BindView(R.id.label_price_amount)
-    TextView  labelPriceAmount;
-    @BindView(R.id.label_total_cost_value)
-    TextView labelTotalCostValue;
+    TextView labelPriceAmount;
 
     private ArrayList data;
     private Activity activity;
@@ -57,25 +52,7 @@ public class BuyDetailPriceDialogAdapter extends ArrayAdapter<String> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_price_list, parent, false);
         ButterKnife.bind(this, convertView);
-
-        FontManager.useFontAwesome(buttonBuy);
-
         labelPriceDescription.setText((String) this.data.get(position));
-
-        if (position == (this.data.size() - 1)) {
-            layoutBuyButton.setVisibility(View.VISIBLE); // will visible the button in last position.
-            labelTotalCostValue.setText("Rp 500.000,00");
-        }
-
-        buttonBuy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Toast.makeText(getContext(), "Click buy package!", Toast.LENGTH_LONG).show();
-
-                Intent intent = new Intent(getContext(), PaymentActivity.class);
-                activity.startActivity(intent);
-            }
-        });
         return convertView;
     }
 

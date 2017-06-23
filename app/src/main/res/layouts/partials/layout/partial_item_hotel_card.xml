@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/image_package"
             android:scaleType="fitXY"
-            android:src="@mipmap/sample_hotel" />
+            android:src="@drawable/sample_hotel" />
 
 
         <TextView
