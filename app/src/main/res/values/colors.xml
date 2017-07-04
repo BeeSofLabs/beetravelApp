@@ -16,4 +16,5 @@
     <!-- App color -->
     <color name="app_toolbar_dark_green">#00a9ae</color>
     <color name="app_dark_green">#00a9ae</color>
+    <color name="app_grey_light">#e6eae3</color>
 </resources>

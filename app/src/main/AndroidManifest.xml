@@ -24,6 +24,9 @@
             android:name=".activity.MainActivity"
             android:theme="@style/AppThemeNoActionBar"></activity>
         <activity
+            android:name=".activity.SearchFilterActivity"
+            android:theme="@style/AppThemeNoActionBar"></activity>
+        <activity
             android:name=".activity.ItineraryActivity"
             android:parentActivityName=".activity.PackageDetailActivity"
             android:theme="@style/AppThemeNoActionBar" />

@@ -1,5 +1,6 @@
 package core.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.tv.tvprototype.R;
+import com.tv.tvprototype.activity.SearchFilterActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,6 +42,7 @@ public class HomeFragment extends Fragment {
     @BindView(R.id.search_keyword)
     TextView searchKeyword;
 
+
     private FragmentManager fragmentManager;
 
     public HomeFragment(FragmentManager fragmentManager) {
@@ -66,10 +69,11 @@ public class HomeFragment extends Fragment {
         searchLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("","-------  click search layout");
+                Intent intent = new Intent(getActivity(), SearchFilterActivity.class);
+                startActivity(intent);
+
             }
         });
-
 
         return rootView;
     }

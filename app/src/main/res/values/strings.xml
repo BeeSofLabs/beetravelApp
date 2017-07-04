@@ -29,4 +29,6 @@
     <string name="label_show_detail">Show Detail</string>
     <string name="total_cost">Total Payment</string>
     <string name="itinerary_timeline_title">Timeline</string>
+    <string name="search">Cari</string>
+
 </resources>
