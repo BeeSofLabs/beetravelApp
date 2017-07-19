@@ -1,5 +1,6 @@
 package com.tv.tvprototype.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -28,13 +29,29 @@ public class SearchFilterActivity extends BaseAppCompatActivity {
         setContentView(R.layout.activity_search_filter);
         ButterKnife.bind(this);
 
+        this.overridePendingTransition(R.anim.anim_slide_in_left,
+                R.anim.anim_slide_out_left);
+
         cancelAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.overridePendingTransition(R.anim.anim_slide_in_right,
+                R.anim.anim_slide_out_right);
+    }
 
 
+    public void onSearch(View v){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        this.overridePendingTransition(R.anim.anim_slide_in_right,
+                R.anim.anim_slide_out_right);
     }
 }

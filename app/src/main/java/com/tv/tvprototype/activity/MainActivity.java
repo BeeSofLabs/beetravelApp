@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.LinearLayout;
 
 import com.tv.tvprototype.BaseAppCompatActivity;
 import com.tv.tvprototype.R;
@@ -59,7 +57,7 @@ public class MainActivity extends BaseAppCompatActivity {
 //                    hiddenPanel.startAnimation(bottomUp);
 //                    hiddenPanel.setVisibility(View.VISIBLE);
 
-                    overridePendingTransition(R.anim.slide_out_bottom, R.anim.slide_in_top);
+                    overridePendingTransition(R.anim.anim_slide_out_bottom, R.anim.anim_slide_in_top);
                     startActivity(new Intent(getBaseContext(), SearchFilterActivity.class));
                     return true;
             }

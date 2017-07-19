@@ -20,102 +20,120 @@
     </LinearLayout>
 
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:layout_weight=".3">
 
         <LinearLayout
-            android:id="@+id/filter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:layout_weight="1"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:text="Destinasi"
-                android:textColor="@android:color/darker_gray" />
 
-            <EditText
-                android:id="@+id/input_destination"
+            <LinearLayout
+                android:id="@+id/filter"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="10dp"
-                android:background="#e6eae3"
-                android:hint="Destination"
-                android:inputType="textEmailAddress"
-                android:padding="5dp" />
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <!-- start date -->
-            <TextView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="Destinasi"
+                    android:textColor="@android:color/darker_gray" />
+
+                <EditText
+                    android:id="@+id/input_destination"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edittext_rounder_corner"
+                    android:hint="Destination"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:inputType="textEmailAddress"
+                    android:padding="5dp" />
+
+                <!-- start date -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="Start Date"
+                    android:textColor="@android:color/darker_gray" />
+
+                <EditText
+                    android:id="@+id/input_start_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edittext_rounder_corner"
+                    android:hint="Start Date"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:inputType="textEmailAddress"
+                    android:padding="5dp" />
+
+                <!-- end date -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:text="End Date"
+                    android:textColor="@android:color/darker_gray" />
+
+                <EditText
+                    android:id="@+id/input_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edittext_rounder_corner"
+                    android:hint="End Date"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:inputType="date"
+                    android:padding="5dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/border_bottom_layout" />
+
+                <include layout="@layout/partial_number_of_people_selector" />
+
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:text="Start Date"
-                android:textColor="@android:color/darker_gray" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|bottom"
+                android:orientation="vertical"
+                android:layout_marginTop="80dp"
+                android:padding="5dp">
 
-            <EditText
-                android:id="@+id/input_start_date"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="10dp"
-                android:background="#e6eae3"
-                android:hint="Start Date"
-                android:inputType="textEmailAddress"
-                android:padding="5dp" />
-
-            <!-- end date -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:text="End Date"
-                android:textColor="@android:color/darker_gray" />
-
-            <EditText
-                android:id="@+id/input_email"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="10dp"
-                android:background="#e6eae3"
-                android:hint="End Date"
-                android:inputType="textEmailAddress"
-                android:padding="5dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1.5dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/border_bottom_layout" />
-
-            <include layout="@layout/partial_number_of_people_selector" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/orange"
+                    android:gravity="center"
+                    android:text="@string/search"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:onClick="onSearch"/>
+            </RelativeLayout>
 
         </LinearLayout>
 
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal|bottom"
-        android:padding="5dp"
-        android:orientation="vertical">
-
-        <Button
-            android:id="@+id/button_buy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/search"
-            android:gravity="center"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:background="@color/orange" />
-    </RelativeLayout>
+    </ScrollView>
 
 </LinearLayout>
